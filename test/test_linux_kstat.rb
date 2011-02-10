@@ -9,6 +9,10 @@ class TC_Linux_Kstat < Test::Unit::TestCase
     @kstat = Linux::Kstat.new
   end
 
+  test "version constant is set to the expected value" do
+    assert_equal('0.1.0', Linux::Kstat::VERSION)
+  end
+
   test "kstat object can be accessed like a hash" do
     assert_respond_to(@kstat, :[])
     assert_nothing_raised{ @kstat[:cpu] }
