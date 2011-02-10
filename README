@@ -1,0 +1,16 @@
+= Description
+  A Ruby library for gathering Linux kernel statistics out of /proc/stat.
+
+= Installation
+  gem install linux-kstat
+
+= Synopsis
+  require 'linux/kstat'
+
+  kstat = Linux::Kstat.new
+
+  p kstat['cpu']
+  p kstat['procs_running']
+
+= Author
+  Daniel J. Berger
