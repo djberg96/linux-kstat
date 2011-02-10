@@ -12,6 +12,10 @@
   p kstat[:cpu]
   p kstat[:procs_running]
 
+= Information about /proc/stat
+  See http://www.linuxhowtos.org/System/procstat.htm for more information
+  about the meaning of each of the fields.
+
 = Known Bugs
   None known. Please report any bugs on the github project page.
 
