@@ -9,8 +9,25 @@
 
   kstat = Linux::Kstat.new
 
-  p kstat['cpu']
-  p kstat['procs_running']
+  p kstat[:cpu]
+  p kstat[:procs_running]
+
+= Known Bugs
+  None known. Please report any bugs on the github project page.
+
+  http://www.github.com/djberg96/linux-kstat
+
+= License
+  Artistic 2.0
+
+= Copyright
+  (C) 2003-2011 Daniel J. Berger
+  All Rights Reserved.`
+
+= Warranty
+  This package is provided "as is" and without any express or
+  implied warranties, including, without limitation, the implied
+  warranties of merchantability and fitness for a particular purpose.
 
 = Author
   Daniel J. Berger
