@@ -12,6 +12,12 @@
   p kstat[:cpu]
   p kstat[:procs_running]
 
+= Details
+  The values for most of the keys are a single numeric value. However, in the
+  case of "cpu" keys, the result is a 7 element hash of numeric values. In
+  the case of the "intr" key, the value is an array containing the list of
+  interrupts.
+
 = Information about /proc/stat
   See http://www.linuxhowtos.org/System/procstat.htm for more information
   about the meaning of each of the fields.
