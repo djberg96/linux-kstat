@@ -10,7 +10,7 @@ class TC_Linux_Kstat < Test::Unit::TestCase
   end
 
   test "version constant is set to the expected value" do
-    assert_equal('0.1.0', Linux::Kstat::VERSION)
+    assert_equal('0.1.1', Linux::Kstat::VERSION)
   end
 
   test "kstat object can be accessed like a hash" do
