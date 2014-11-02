@@ -1,7 +1,9 @@
-require 'rubygems'
-gem 'test-unit'
-
-require 'test/unit'
+#######################################################################
+# test_linux_kstat.rb
+#
+# Test suite for the linux-kstat library.
+#######################################################################
+require 'test-unit'
 require 'linux/kstat'
 
 class TC_Linux_Kstat < Test::Unit::TestCase
@@ -10,7 +12,7 @@ class TC_Linux_Kstat < Test::Unit::TestCase
   end
 
   test "version constant is set to the expected value" do
-    assert_equal('0.1.1', Linux::Kstat::VERSION)
+    assert_equal('0.1.2', Linux::Kstat::VERSION)
   end
 
   test "kstat object can be accessed like a hash" do
