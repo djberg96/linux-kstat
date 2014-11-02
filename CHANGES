@@ -1,3 +1,6 @@
+= 0.1.2 - 2-Nov-2014
+* Updates to the gemspec and Rakefile.
+
 = 0.1.1 - 20-May-2011
 * Set the spec platform to 'universal-linux'.
 
