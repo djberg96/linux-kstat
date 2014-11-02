@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
 
   gem.extra_rdoc_files  = ['README', 'CHANGES', 'MANIFEST']
 
-  gem.add_development_dependency('test-unit', '>= 2.1.2')
+  gem.add_development_dependency('test-unit', '>= 2.5.0')
 
   gem.description = <<-EOF
     The linux-kstat library provides a hash style interface for reading
