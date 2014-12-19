@@ -51,21 +51,23 @@ module Linux
 
       IO.readlines('/proc/stat').each{ |line|
         info = line.split
-        if info.first =~ /^cpu/i
-          hash[info.first.to_sym] = {
-            :user    => info[1].to_i,
-            :nice    => info[2].to_i,
-            :system  => info[3].to_i,
-            :idle    => info[4].to_i,
-            :iowait  => info[5].to_i,
-            :irq     => info[6].to_i,
-            :softirq => info[7].to_i
-          }
-        else
-          if info.size > 2
-            hash[info.first.to_sym] = info[1..-1].map{ |e| e.to_i }
+        unless info.empty?
+          if info.first =~ /^cpu/i
+            hash[info.first.to_sym] = {
+              :user    => info[1].to_i,
+              :nice    => info[2].to_i,
+              :system  => info[3].to_i,
+              :idle    => info[4].to_i,
+              :iowait  => info[5].to_i,
+              :irq     => info[6].to_i,
+              :softirq => info[7].to_i
+            }
           else
-            hash[info.first.to_sym] = info[1].to_i
+            if info.size > 2
+              hash[info.first.to_sym] = info[1..-1].map{ |e| e.to_i }
+            else
+              hash[info.first.to_sym] = info[1].to_i
+            end
           end
         end
       }
