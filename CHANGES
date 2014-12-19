@@ -1,3 +1,6 @@
+= 0.1.3 - 18-Dec-2014
+* Now properly ignores blank lines. Thanks go to "onlinehead" for the patch.
+
 = 0.1.2 - 2-Nov-2014
 * Updates to the gemspec and Rakefile.
 
