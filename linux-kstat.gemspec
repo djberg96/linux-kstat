@@ -3,7 +3,7 @@ require 'rbconfig'
 
 Gem::Specification.new do |gem|
   gem.name       = 'linux-kstat'
-  gem.version    = '0.1.2'
+  gem.version    = '0.1.3'
   gem.license    = 'Artistic 2.0'
   gem.author     = 'Daniel J. Berger'
   gem.email      = 'djberg96@gmail.com'
