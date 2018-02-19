@@ -9,7 +9,7 @@ namespace :gem do
   task :create => [:clean] do
     spec = eval(IO.read('linux-kstat.gemspec'))
     require 'rubygems/package'
-    Gem::Package.build(spec)
+    Gem::Package.build(spec, true)
   end
 
   desc "Install the linux-kstat gem"
