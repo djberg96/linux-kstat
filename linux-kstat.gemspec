@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary    = 'Ruby interface for Linux kernel stats in /proc/stat'
   gem.test_files = Dir['test/test*']
   gem.files      = Dir['**/*'].reject{ |f| f.include?('git') }
+  gem.cert_chain = ['certs/djberg96_pub.pem']
 
   gem.extra_rdoc_files  = ['README', 'CHANGES', 'MANIFEST']
 
