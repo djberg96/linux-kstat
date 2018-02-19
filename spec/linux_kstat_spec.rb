@@ -1,36 +1,34 @@
 #######################################################################
-# test_linux_kstat.rb
+# linux_kstat_spec.rb
 #
 # Test suite for the linux-kstat library.
 #######################################################################
-require 'test-unit'
+require 'rspec'
 require 'linux/kstat'
 
-class TC_Linux_Kstat < Test::Unit::TestCase
-  def setup
-    @kstat = Linux::Kstat.new
+describe Linux::Kstat do
+  let(:kstat){ Linux::Kstat.new }
+
+  context "constants" do
+    it "defines a version constant that is set to the expected value" do
+      expect(Linux::Kstat::VERSION).to eql('0.2.0')
+    end
   end
 
-  test "version constant is set to the expected value" do
-    assert_equal('0.1.3', Linux::Kstat::VERSION)
-  end
+  context "hash access" do
+    it "allows hash style key access" do
+      expect(subject).to respond_to(:[])
+      expect{ subject[:cpu] }.to_not raise_error
+    end
 
-  test "kstat object can be accessed like a hash" do
-    assert_respond_to(@kstat, :[])
-    assert_nothing_raised{ @kstat[:cpu] }
-  end
+    it "contains the expected keys and value types" do
+      expect(kstat[:cpu]).to be_kind_of(Hash)
+      expect(kstat[:btime]).to be_kind_of(Numeric)
+      expect(kstat[:intr]).to be_kind_of(Array)
+    end
 
-  test "kstat object contains expected keys" do
-    assert_kind_of(Hash, @kstat[:cpu])
-    assert_kind_of(Numeric, @kstat[:btime])
-    assert_kind_of(Array, @kstat[:intr])
-  end
-
-  test "values cannot be assigned to keys" do
-    assert_raise(NoMethodError){ @kstat[:cpu] = 'test' }
-  end
-
-  def teardown
-    @kstat = nil
+    it "does not allow key assignment" do
+      expect{ subject[:cpu] = 'test' }.to raise_error(NoMethodError)
+    end
   end
 end
