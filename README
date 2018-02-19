@@ -4,7 +4,16 @@
 = Installation
   gem install linux-kstat
 
+= Bundler
+
+  If you have trouble install this gem via bundler, please try this:
+
+  bundle config specific_platform true
+
+  Then attempt to install again.
+
 = Synopsis
+  # require 'linux-kstat' will also work
   require 'linux/kstat'
 
   kstat = Linux::Kstat.new
@@ -28,10 +37,10 @@
   http://www.github.com/djberg96/linux-kstat
 
 = License
-  Artistic 2.0
+  Apache 2.0
 
 = Copyright
-  (C) 2003-2014 Daniel J. Berger
+  (C) 2003-2018 Daniel J. Berger
   All Rights Reserved.`
 
 = Warranty
