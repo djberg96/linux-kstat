@@ -1,6 +1,6 @@
 require 'rake'
 require 'rake/clean'
-require 'rake/testtask'
+require 'rspec/core/rake_task'
 
 CLEAN.include('**/*.gem', '**/*.rbc')
 
@@ -8,12 +8,8 @@ namespace :gem do
   desc 'Build the linux-kstat gem'
   task :create => [:clean] do
     spec = eval(IO.read('linux-kstat.gemspec'))
-    if Gem::VERSION < "2.0"
-      Gem::Builder.new(spec).build
-    else
-      require 'rubygems/package'
-      Gem::Package.build(spec)
-    end
+    require 'rubygems/package'
+    Gem::Package.build(spec)
   end
 
   desc "Install the linux-kstat gem"
@@ -27,10 +23,8 @@ namespace :gem do
   end
 end
 
-Rake::TestTask.new do |t|
-  task :test => :clean
-  t.warning = true
-  t.verbose = true
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.pattern = ['spec/*.rb']
 end
 
-task :default => :test
+task :default => :spec
