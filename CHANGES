@@ -1,5 +1,6 @@
 = 0.2.0 - 19-Feb-2018
 * Switched license to Apache 2.0.
+* Added a linux-kstat.rb file for convenience.
 * Rakefile now assumes rubygems 2.x.
 * Tests switched to use rspec and development dependencies updated.
 * VERSION constant is now frozen.
