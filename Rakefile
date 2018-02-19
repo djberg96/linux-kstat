@@ -7,8 +7,9 @@ CLEAN.include('**/*.gem', '**/*.rbc')
 namespace :gem do
   desc 'Build the linux-kstat gem'
   task :create => [:clean] do
-    spec = eval(IO.read('linux-kstat.gemspec'))
     require 'rubygems/package'
+    spec = eval(IO.read('linux-kstat.gemspec'))
+    spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
     Gem::Package.build(spec, true)
   end
 
