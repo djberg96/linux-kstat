@@ -1,3 +1,8 @@
+= 0.2.1 - 25-Jan-2019
+* Fixed license name (missing hyphen).
+* Added metadata to the gemspec.
+* Updated cert, should be good for about 10 years.
+
 = 0.2.0 - 19-Feb-2018
 * Switched license to Apache 2.0.
 * Added a linux-kstat.rb file for convenience.
