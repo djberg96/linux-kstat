@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency('rspec')
 
-  spec.metadata = {
+  gem.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/linux-kstat',
     'bug_tracker_uri'   => 'https://github.com/djberg96/linux-kstat/issues',
     'changelog_uri'     => 'https://github.com/djberg96/linux-kstat/blob/master/CHANGES',
