@@ -7,7 +7,7 @@ module Linux
     extend Forwardable
 
     # The version of the linux-kstat library
-    VERSION = '0.2.0'.freeze
+    VERSION = '0.2.1'.freeze
 
     # :stopdoc:
 
