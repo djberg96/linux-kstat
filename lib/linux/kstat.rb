@@ -7,7 +7,7 @@ module Linux
     extend Forwardable
 
     # The version of the linux-kstat library
-    VERSION = '0.2.1'.freeze
+    VERSION = '0.2.2'.freeze
 
     # :stopdoc:
 
@@ -26,13 +26,16 @@ module Linux
     #   kstat = Linux::Kstat.new
     #
     #   kstat[:cpu] => {
-    #     :idle     => 250713454,
-    #     :iowait   => 2745691,
-    #     :irq      => 39717,
-    #     :softirq  => 31323,
-    #     :system   => 1881655,
-    #     :nice     => 117158,
-    #     :user     => 7137418
+    #     :idle       => 250713454,
+    #     :iowait     => 2745691,
+    #     :irq        => 39717,
+    #     :softirq    => 31323,
+    #     :system     => 1881655,
+    #     :nice       => 117158,
+    #     :user       => 7137418,
+    #     :steal      => 0,
+    #     :guest      => 1162987977,
+    #     :guest_nice => 0
     #   }
     #
     #   kstat[:processes] # => 1299560
@@ -54,13 +57,16 @@ module Linux
         unless info.empty?
           if info.first =~ /^cpu/i
             hash[info.first.to_sym] = {
-              :user    => info[1].to_i,
-              :nice    => info[2].to_i,
-              :system  => info[3].to_i,
-              :idle    => info[4].to_i,
-              :iowait  => info[5].to_i,
-              :irq     => info[6].to_i,
-              :softirq => info[7].to_i
+              :user       => info[1].to_i,
+              :nice       => info[2].to_i,
+              :system     => info[3].to_i,
+              :idle       => info[4].to_i,
+              :iowait     => info[5].to_i,
+              :irq        => info[6].to_i,
+              :softirq    => info[7].to_i,
+              :steal      => info[8].to_i,
+              :guest      => info[9].to_i,
+              :guest_nice => info[10].to_i
             }
           else
             if info.size > 2
