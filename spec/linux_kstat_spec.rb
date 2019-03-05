@@ -11,7 +11,7 @@ describe Linux::Kstat do
 
   context "constants" do
     it "defines a version constant that is set to the expected value" do
-      expect(Linux::Kstat::VERSION).to eql('0.2.1')
+      expect(Linux::Kstat::VERSION).to eql('0.2.2')
       expect(Linux::Kstat::VERSION.frozen?).to be(true)
     end
   end
@@ -20,6 +20,7 @@ describe Linux::Kstat do
     it "allows hash style key access" do
       expect(subject).to respond_to(:[])
       expect{ subject[:cpu] }.to_not raise_error
+      expect(subject[:cpu].keys.size).to eql(10)
     end
 
     it "contains the expected keys and value types" do
