@@ -1,6 +1,6 @@
-* CHANGES
-* README
-* MANIFEST
+* CHANGES.md
+* README.md
+* MANIFEST.md
 * Rakefile
 * linux-kstat.gemspec
 * certs/djberg96_pub.pem
