@@ -1,6 +1,6 @@
 ## Description
 
-A Ruby library for gathering Linux kernel statistics out of /proc/stat.
+A Ruby library for gathering Linux kernel statistics out of `/proc/stat`.
 
 ## Installation
 
