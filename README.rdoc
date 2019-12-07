@@ -1,4 +1,4 @@
-= Description
+== Description
 
 A Ruby library for gathering Linux kernel statistics out of /proc/stat.
 
@@ -46,7 +46,7 @@ None known. Please report any bugs on the github project page:
 
 Apache-2.0
 
-= Copyright
+== Copyright
 
 (C) 2003-2019 Daniel J. Berger
 All Rights Reserved.`
