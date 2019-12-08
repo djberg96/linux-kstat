@@ -1,3 +1,7 @@
+== 0.2.3 - 8-Dec-2019
+* Renamed various text files to include .rdoc extension so that github
+  displays them nicely.
+
 == 0.2.2 - 5-Mar-2019
 * Added the steal, guest and guest_nice attributes for cpu stats.
 
