@@ -1,6 +1,7 @@
 * CHANGES.rdoc
-* README.rdoc
+* LICENSE
 * MANIFEST.rdoc
+* README.rdoc
 * Rakefile
 * linux-kstat.gemspec
 * certs/djberg96_pub.pem
