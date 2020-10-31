@@ -1,3 +1,13 @@
+## 0.2.5 - 31-Oct-2020
+* Switched from rdoc to markdown since github wasn't rendering rdoc properly.
+* Minor gemspec updates.
+
+## 0.2.4 - 3-Apr-2020
+* Added a LICENSE file as per the Apache license requirements.
+
+## 0.2.3 - 8-Dec-2019
+* Added .rdoc extension to the README, CHANGES and MANIFEST files.
+
 ## 0.2.2 - 5-Mar-2019
 * Added the `steal`, `guest` and `guest_nice` attributes for cpu stats.
 
