@@ -1,0 +1,9 @@
+* CHANGES.md
+* README.md
+* MANIFEST.md
+* Rakefile
+* linux-kstat.gemspec
+* certs/djberg96_pub.pem
+* lib/linux-kstat.rb
+* lib/linux/kstat.rb
+* spec/linux_kstat_spec.rb
