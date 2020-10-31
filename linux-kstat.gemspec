@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.platform   = Gem::Platform.new('universal-linux')
   gem.homepage   = 'https://github.com/djberg96/linux-kstat'
   gem.summary    = 'Ruby interface for Linux kernel stats in /proc/stat'
-  gem.test_files = Dir['test/test*']
+  gem.test_files = Dir['spec/*_spec.rb']
   gem.files      = Dir['**/*'].reject{ |f| f.include?('git') }
   gem.cert_chain = ['certs/djberg96_pub.pem']
 
