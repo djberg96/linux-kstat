@@ -16,13 +16,13 @@ Then attempt to install again.
 
 ## Synopsis
 ```
-  # require 'linux-kstat' will also work
-  require 'linux/kstat'
+# require 'linux-kstat' will also work
+require 'linux/kstat'
 
-  kstat = Linux::Kstat.new
+kstat = Linux::Kstat.new
 
-  p kstat[:cpu]
-  p kstat[:procs_running]
+p kstat[:cpu]
+p kstat[:procs_running]
 ```
 
 ## Details
@@ -49,7 +49,7 @@ Apache-2.0
 
 ## Copyright
 
-(C) 2003-2019 Daniel J. Berger
+(C) 2003-2020 Daniel J. Berger
 All Rights Reserved.`
 
 ## Warranty
