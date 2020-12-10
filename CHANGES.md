@@ -1,3 +1,7 @@
+## 0.2.6 - 10-Dec-2020
+* Specify an rspec version for the development dependency.
+* Minor updates to gemspec, Rakefile.
+
 ## 0.2.5 - 31-Oct-2020
 * Switched from rdoc to markdown since github wasn't rendering rdoc properly.
 * Minor gemspec updates.
