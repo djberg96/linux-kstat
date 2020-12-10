@@ -10,7 +10,7 @@ namespace :gem do
     require 'rubygems/package'
     spec = eval(IO.read('linux-kstat.gemspec'))
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
-    Gem::Package.build(spec, true)
+    Gem::Package.build(spec)
   end
 
   desc "Install the linux-kstat gem"

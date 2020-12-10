@@ -1,9 +1,8 @@
 require 'rubygems'
-require 'rbconfig'
 
 Gem::Specification.new do |gem|
   gem.name       = 'linux-kstat'
-  gem.version    = '0.2.5'
+  gem.version    = '0.2.6'
   gem.license    = 'Apache-2.0'
   gem.author     = 'Daniel J. Berger'
   gem.email      = 'djberg96@gmail.com'
@@ -14,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.files      = Dir['**/*'].reject{ |f| f.include?('git') }
   gem.cert_chain = ['certs/djberg96_pub.pem']
 
-  gem.add_development_dependency('rspec')
+  gem.add_development_dependency('rspec', '~> 3.9')
 
   gem.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/linux-kstat',
