@@ -15,7 +15,7 @@ If you have trouble install this gem via bundler, please try this:
 Then attempt to install again.
 
 ## Synopsis
-```
+```ruby
 # require 'linux-kstat' will also work
 require 'linux/kstat'
 
