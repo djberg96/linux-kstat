@@ -1,3 +1,5 @@
+[![Ruby](https://github.com/djberg96/linux-kstat/actions/workflows/ruby.yml/badge.svg)](https://github.com/djberg96/linux-kstat/actions/workflows/ruby.yml)
+
 ## Description
 
 A Ruby library for gathering Linux kernel statistics out of `/proc/stat`.
