@@ -13,6 +13,7 @@ Gem::Specification.new do |gem|
   gem.files      = Dir['**/*'].reject{ |f| f.include?('git') }
   gem.cert_chain = ['certs/djberg96_pub.pem']
 
+  gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec', '~> 3.9')
 
   gem.metadata = {
