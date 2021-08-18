@@ -2,13 +2,13 @@ require 'rake'
 require 'rake/clean'
 require 'rspec/core/rake_task'
 
-CLEAN.include('**/*.gem', '**/*.rbc')
+CLEAN.include('**/*.gem', '**/*.rbc', '**/*.lock')
 
 namespace :gem do
   desc 'Build the linux-kstat gem'
   task :create => [:clean] do
     require 'rubygems/package'
-    spec = eval(IO.read('linux-kstat.gemspec'))
+    spec = Gem::Specification.load('linux-kstat.gemspec')
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
     Gem::Package.build(spec)
   end
