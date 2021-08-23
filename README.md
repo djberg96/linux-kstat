@@ -8,6 +8,9 @@ A Ruby library for gathering Linux kernel statistics out of `/proc/stat`.
 
 `gem install linux-kstat`
 
+## Adding the trusted cert
+`gem cert --add <(curl -Ls https://raw.githubusercontent.com/djberg96/linux-kstat/main/certs/djberg96_pub.pem)`
+
 ### Bundler
 
 If you have trouble install this gem via bundler, please try this:
