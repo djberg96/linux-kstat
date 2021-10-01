@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 
 # The Linux module serves as a namespace only.
@@ -7,7 +9,7 @@ module Linux
     extend Forwardable
 
     # The version of the linux-kstat library
-    VERSION = '0.2.6'.freeze
+    VERSION = '0.2.6'
 
     # :stopdoc:
 
@@ -52,7 +54,7 @@ module Linux
     def get_proc_stat_info
       hash = {}
 
-      IO.readlines('/proc/stat').each do |line|
+      File.readlines('/proc/stat').each do |line|
         info = line.split
         unless info.empty?
           if info.first =~ /^cpu/i
@@ -69,7 +71,7 @@ module Linux
               :guest_nice => info[10].to_i
             }
           elsif info.size > 2
-            hash[info.first.to_sym] = info[1..-1].map{ |e| e.to_i }
+            hash[info.first.to_sym] = info[1..-1].map(&:to_i)
           else
             hash[info.first.to_sym] = info[1].to_i
           end
