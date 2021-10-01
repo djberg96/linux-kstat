@@ -52,31 +52,29 @@ module Linux
     def get_proc_stat_info
       hash = {}
 
-      IO.readlines('/proc/stat').each{ |line|
+      IO.readlines('/proc/stat').each do |line|
         info = line.split
         unless info.empty?
           if info.first =~ /^cpu/i
             hash[info.first.to_sym] = {
-              :user       => info[1].to_i,
-              :nice       => info[2].to_i,
-              :system     => info[3].to_i,
-              :idle       => info[4].to_i,
-              :iowait     => info[5].to_i,
-              :irq        => info[6].to_i,
-              :softirq    => info[7].to_i,
-              :steal      => info[8].to_i,
-              :guest      => info[9].to_i,
+              :user => info[1].to_i,
+              :nice => info[2].to_i,
+              :system => info[3].to_i,
+              :idle => info[4].to_i,
+              :iowait => info[5].to_i,
+              :irq => info[6].to_i,
+              :softirq => info[7].to_i,
+              :steal => info[8].to_i,
+              :guest => info[9].to_i,
               :guest_nice => info[10].to_i
             }
+          elsif info.size > 2
+            hash[info.first.to_sym] = info[1..-1].map{ |e| e.to_i }
           else
-            if info.size > 2
-              hash[info.first.to_sym] = info[1..-1].map{ |e| e.to_i }
-            else
-              hash[info.first.to_sym] = info[1].to_i
-            end
+            hash[info.first.to_sym] = info[1].to_i
           end
         end
-      }
+      end
 
       hash
     end
