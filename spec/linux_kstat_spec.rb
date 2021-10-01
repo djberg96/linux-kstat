@@ -20,9 +20,9 @@ describe Linux::Kstat do
 
   context "hash access" do
     it "allows hash style key access" do
-      expect(subject).to respond_to(:[])
-      expect{ subject[:cpu] }.not_to raise_error
-      expect(subject[:cpu].keys.size).to be(10)
+      expect(kstat).to respond_to(:[])
+      expect{ kstat[:cpu] }.not_to raise_error
+      expect(kstat[:cpu].keys.size).to be(10)
     end
 
     it "contains the expected keys and value types" do
@@ -32,7 +32,7 @@ describe Linux::Kstat do
     end
 
     it "does not allow key assignment" do
-      expect{ subject[:cpu] = 'test' }.to raise_error(NoMethodError)
+      expect{ kstat[:cpu] = 'test' }.to raise_error(NoMethodError)
     end
   end
 end
