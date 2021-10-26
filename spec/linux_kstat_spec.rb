@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #######################################################################
 # linux_kstat_spec.rb
 #
@@ -7,7 +9,7 @@ require 'rspec'
 require 'linux/kstat'
 
 describe Linux::Kstat do
-  let(:kstat){ Linux::Kstat.new }
+  let(:kstat){ described_class.new }
 
   context "constants" do
     it "defines a version constant that is set to the expected value" do
@@ -18,9 +20,9 @@ describe Linux::Kstat do
 
   context "hash access" do
     it "allows hash style key access" do
-      expect(subject).to respond_to(:[])
-      expect{ subject[:cpu] }.to_not raise_error
-      expect(subject[:cpu].keys.size).to eql(10)
+      expect(kstat).to respond_to(:[])
+      expect{ kstat[:cpu] }.not_to raise_error
+      expect(kstat[:cpu].keys.size).to be(10)
     end
 
     it "contains the expected keys and value types" do
@@ -30,7 +32,7 @@ describe Linux::Kstat do
     end
 
     it "does not allow key assignment" do
-      expect{ subject[:cpu] = 'test' }.to raise_error(NoMethodError)
+      expect{ kstat[:cpu] = 'test' }.to raise_error(NoMethodError)
     end
   end
 end
