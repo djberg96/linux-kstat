@@ -16,6 +16,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec', '~> 3.9')
 
+  gem.platform = Gem::Platform.new(['universal', 'linux'])
+
   gem.metadata = {
     'homepage_uri'      => 'https://github.com/djberg96/linux-kstat',
     'bug_tracker_uri'   => 'https://github.com/djberg96/linux-kstat/issues',
