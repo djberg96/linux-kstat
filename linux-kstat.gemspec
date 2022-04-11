@@ -14,6 +14,8 @@ Gem::Specification.new do |gem|
   gem.cert_chain = ['certs/djberg96_pub.pem']
 
   gem.add_development_dependency('rake')
+  gem.add_development_dependency('rubocop')
+  gem.add_development_dependency('rubocop-rspec')
   gem.add_development_dependency('rspec', '~> 3.9')
 
   gem.platform = Gem::Platform.new(['universal', 'linux'])
