@@ -21,12 +21,13 @@ Gem::Specification.new do |gem|
   gem.platform = Gem::Platform.new(['universal', 'linux'])
 
   gem.metadata = {
-    'homepage_uri'      => 'https://github.com/djberg96/linux-kstat',
-    'bug_tracker_uri'   => 'https://github.com/djberg96/linux-kstat/issues',
-    'changelog_uri'     => 'https://github.com/djberg96/linux-kstat/blob/master/CHANGES.md',
-    'documentation_uri' => 'https://github.com/djberg96/linux-kstat/wiki',
-    'source_code_uri'   => 'https://github.com/djberg96/linux-kstat',
-    'wiki_uri'          => 'https://github.com/djberg96/linux-kstat/wiki'
+    'homepage_uri'          => 'https://github.com/djberg96/linux-kstat',
+    'bug_tracker_uri'       => 'https://github.com/djberg96/linux-kstat/issues',
+    'changelog_uri'         => 'https://github.com/djberg96/linux-kstat/blob/master/CHANGES.md',
+    'documentation_uri'     => 'https://github.com/djberg96/linux-kstat/wiki',
+    'source_code_uri'       => 'https://github.com/djberg96/linux-kstat',
+    'wiki_uri'              => 'https://github.com/djberg96/linux-kstat/wiki',
+    'rubygems_mfa_required' => 'true'
   }
 
   gem.description = <<-EOF
