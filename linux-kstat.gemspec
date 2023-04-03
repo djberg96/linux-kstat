@@ -6,7 +6,6 @@ Gem::Specification.new do |gem|
   gem.license    = 'Apache-2.0'
   gem.author     = 'Daniel J. Berger'
   gem.email      = 'djberg96@gmail.com'
-  gem.platform   = Gem::Platform.new('universal-linux')
   gem.homepage   = 'https://github.com/djberg96/linux-kstat'
   gem.summary    = 'Ruby interface for Linux kernel stats in /proc/stat'
   gem.test_files = Dir['spec/*_spec.rb']
