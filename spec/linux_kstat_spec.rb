@@ -26,9 +26,9 @@ describe Linux::Kstat do
     end
 
     it 'contains the expected keys and value types' do
-      expect(kstat[:cpu]).to be_kind_of(Hash)
-      expect(kstat[:btime]).to be_kind_of(Numeric)
-      expect(kstat[:intr]).to be_kind_of(Array)
+      expect(kstat[:cpu]).to be_a(Hash)
+      expect(kstat[:btime]).to be_a(Numeric)
+      expect(kstat[:intr]).to be_a(Array)
     end
 
     it 'does not allow key assignment' do

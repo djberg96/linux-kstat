@@ -8,6 +8,9 @@ RSpec/FilePath:
   SpecSuffixOnly: true
 RSpec/InstanceVariable:
   Enabled: false
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - 'spec/linux_kstat_spec.rb'
 
 AllCops:
   NewCops: enable
@@ -29,6 +32,8 @@ Style/GuardClause:
   Enabled: false
 Style/HashSyntax:
   Enabled: false
+Style/SlicingWithRange:
+  Enabled: false
 Layout/EmptyLineAfterGuardClause:
   Enabled: false
 Layout/CaseIndentation:
@@ -38,7 +43,7 @@ Layout/SpaceBeforeBlockBraces:
 Metrics/AbcSize:
   Enabled: false
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  AllowedMethods: ['describe', 'context']
 Metrics/ClassLength:
   Enabled: false
 Metrics/MethodLength:
