@@ -13,7 +13,7 @@ describe Linux::Kstat do
 
   context 'constants' do
     it 'defines a version constant that is set to the expected value' do
-      expect(Linux::Kstat::VERSION).to eql('0.2.6')
+      expect(Linux::Kstat::VERSION).to eql('0.2.7')
       expect(Linux::Kstat::VERSION).to be_frozen
     end
   end

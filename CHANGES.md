@@ -1,3 +1,9 @@
+## 0.2.7 - 20-Apr-2024
+* Rubocop updates.
+* Spec updates.
+* Gemspec updates.
+* Documentation and other miscellaneous project updates.
+
 ## 0.2.6 - 10-Dec-2020
 * Specify an rspec version for the development dependency.
 * Minor updates to gemspec, Rakefile.
