@@ -27,7 +27,8 @@ Gem::Specification.new do |gem|
     'source_code_uri'       => 'https://github.com/djberg96/linux-kstat',
     'wiki_uri'              => 'https://github.com/djberg96/linux-kstat/wiki',
     'rubygems_mfa_required' => 'true',
-    'github_repo'           => 'https://github.com/djberg96/linux-kstat'
+    'github_repo'           => 'https://github.com/djberg96/linux-kstat',
+    'funding_uri'           => 'https://github.com/sponsors/djberg96'
   }
 
   gem.description = <<-EOF
