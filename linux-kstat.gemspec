@@ -17,7 +17,10 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rubocop-rspec')
   gem.add_development_dependency('rspec', '~> 3.9')
 
-  gem.platform = Gem::Platform.new(['universal', 'linux'])
+  # Don't build this gem with Java-based implementations
+  if RUBY_ENGINE !~ /truffleruby|jruby/i
+    gem.platform = Gem::Platform.new(['universal', 'linux'])
+  end
 
   gem.metadata = {
     'homepage_uri'          => 'https://github.com/djberg96/linux-kstat',
