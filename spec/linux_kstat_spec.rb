@@ -13,7 +13,7 @@ describe Linux::Kstat do
 
   context 'constants' do
     it 'defines a version constant that is set to the expected value' do
-      expect(Linux::Kstat::VERSION).to eql('0.2.7')
+      expect(Linux::Kstat::VERSION).to eql('0.2.8')
       expect(Linux::Kstat::VERSION).to be_frozen
     end
   end
@@ -29,6 +29,12 @@ describe Linux::Kstat do
       expect(kstat[:cpu]).to be_a(Hash)
       expect(kstat[:btime]).to be_a(Numeric)
       expect(kstat[:intr]).to be_a(Array)
+    end
+
+    it 'delegates the keys method' do
+      expect(kstat).to respond_to(:keys)
+      expect(kstat.keys).to be_a(Array)
+      expect(kstat.keys).to include(:cpu)
     end
 
     it 'does not allow key assignment' do
