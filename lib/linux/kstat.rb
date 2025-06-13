@@ -16,6 +16,7 @@ module Linux
     # Delegate the the [] and inspect methods to the @hash variable
     def_delegator(:@hash, :[])
     def_delegator(:@hash, :inspect)
+    def_delegator(:@hash, :keys)
 
     # :startdoc:
 

@@ -31,6 +31,12 @@ describe Linux::Kstat do
       expect(kstat[:intr]).to be_a(Array)
     end
 
+    it 'delegates the keys method' do
+      expect(kstat).to respond_to(:keys)
+      expect(kstat.keys).to be_a(Array)
+      expect(kstat.keys).to include(:cpu)
+    end
+
     it 'does not allow key assignment' do
       expect{ kstat[:cpu] = 'test' }.to raise_error(NoMethodError)
     end
