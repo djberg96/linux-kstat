@@ -9,7 +9,7 @@ module Linux
     extend Forwardable
 
     # The version of the linux-kstat library
-    VERSION = '0.2.7'
+    VERSION = '0.2.8'
 
     # :stopdoc:
 
@@ -56,9 +56,12 @@ module Linux
 
       File.readlines('/proc/stat').each do |line|
         info = line.split
+        next if info.empty?
+        key = info.first.to_sym
+
         unless info.empty?
           if info.first =~ /^cpu/i
-            hash[info.first.to_sym] = {
+            hash[key] = {
               :user => info[1].to_i,
               :nice => info[2].to_i,
               :system => info[3].to_i,
@@ -71,9 +74,9 @@ module Linux
               :guest_nice => info[10].to_i
             }
           elsif info.size > 2
-            hash[info.first.to_sym] = info[1..-1].map(&:to_i)
+            hash[key] = info[1..-1].map(&:to_i)
           else
-            hash[info.first.to_sym] = info[1].to_i
+            hash[key] = info[1].to_i
           end
         end
       end

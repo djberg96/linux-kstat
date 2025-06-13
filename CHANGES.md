@@ -1,3 +1,6 @@
+## 0.2.8 - 13-Jun-2025
+* Minor optimization where I avoid making repeated calls.
+
 ## 0.2.7 - 20-Apr-2024
 * Rubocop updates.
 * Spec updates.
