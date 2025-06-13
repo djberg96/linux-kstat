@@ -51,31 +51,31 @@ module Linux
     # Parse the information out of /proc/stat and assign keys and values to
     # a hash that can be accessed via the Forwardable module.
     #
+
+    CPU_FIELDS = %i[user nice system idle iowait irq softirq steal guest guest_nice].freeze
+
     def get_proc_stat_info
       hash = {}
 
-      File.readlines('/proc/stat').each do |line|
-        info = line.split
-        unless info.empty?
-          if info.first =~ /^cpu/i
-            hash[info.first.to_sym] = {
-              :user => info[1].to_i,
-              :nice => info[2].to_i,
-              :system => info[3].to_i,
-              :idle => info[4].to_i,
-              :iowait => info[5].to_i,
-              :irq => info[6].to_i,
-              :softirq => info[7].to_i,
-              :steal => info[8].to_i,
-              :guest => info[9].to_i,
-              :guest_nice => info[10].to_i
-            }
-          elsif info.size > 2
-            hash[info.first.to_sym] = info[1..-1].map(&:to_i)
+      begin
+        File.foreach('/proc/stat') do |line|
+          info = line.split
+          next if info.empty?
+
+          key = info.first.to_sym
+
+          case
+          when key.to_s =~ /^cpu/i
+            values = CPU_FIELDS.each_with_index.map { |field, i| [field, info[i + 1]&.to_i || 0] }.to_h
+            hash[key] = values
+          when info.size > 2
+            hash[key] = info[1..].map(&:to_i)
           else
-            hash[info.first.to_sym] = info[1].to_i
+            hash[key] = info[1].to_i
           end
         end
+      rescue Errno::ENOENT
+        raise "Could not read /proc/stat"
       end
 
       hash
